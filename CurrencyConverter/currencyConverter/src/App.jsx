@@ -1,14 +1,17 @@
 import { useState } from 'react'
-
+import { InputBox } from './components'
+import useCurrencyInfo from './hooks/useCurrencyInfo'
 import './App.css'
 
 function App() {
+  let [amount, setAmount]=useState(0)
+  let [from, setFrom] = useState("inr")
+  let [to, setTo] = useState("usd")
+  let [convertedAmount, setConvertedAmountmount] = useState(0)
   
   return (
     <>
-      <h1 className=' text-orange-500 bg-white'>
-        helhmh5motv
-      </h1>
+      
     </>
   )
 }
