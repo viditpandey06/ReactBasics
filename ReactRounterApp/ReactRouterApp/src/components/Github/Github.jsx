@@ -1,33 +1,23 @@
-import React from 'react'
-import  { useState, useEffect } from 'react';
-import styled from 'styled-components';
 
-const Github= ({ message='Thank You' }) => {
-    const [isVisible, setIsVisible] = useState(false);
+import { useState,useEffect } from 'react'
+function Github() {
+  let [data,setData]=useState([])
+  useEffect(() => {
+  fetch('https://api.github.com/users/viditpandey06')
+  .then(response => response.json())
+  .then(data=>{
+    setData(data)
+  })
+  }, [])
+  
+  
+  
+  
+  return (
+    <div className='text-center m-4 bg-slate-600 p-4 text-3xl text-white'>Github Followers:{data.followers}
+      <img className='' src={data.avatar_url} alt="img" width={300}/>
+    </div>
+  )
+}
 
-    useEffect(() => {
-        setIsVisible(true);
-    }, []);
-
-    const ThankYouContainer = styled.div`
-    display: none;
-    opacity: 0;
-    transition: opacity 0.5s;
-    text-align: center;
-    margin-top: 20px;
-
-    &.visible {
-      display: block;
-      opacity: 1;
-    }
-  `;
-
-    return (
-        <ThankYouContainer className={isVisible ? 'visible' : ''}>
-            <h2>{message}</h2>
-        </ThankYouContainer>
-    );
-};
-
-export default Github;
-
+export default Github

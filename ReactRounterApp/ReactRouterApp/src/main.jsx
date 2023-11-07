@@ -15,6 +15,7 @@ import About from './components/About/About.jsx'
 import Contact from './components/ContactUS/Contact.jsx'
 import ThankYouMessage from './components/Github/Github.jsx'
 import Github from './components/Github/Github.jsx'
+import User from './components/User/User.jsx'
 const router= createBrowserRouter([
   {
     path:'/',
@@ -33,8 +34,13 @@ const router= createBrowserRouter([
         element:<Contact/>
       },
       {
-        path:'message',
-        element:<Github/>
+        path: 'user/:userid',
+        element: <User />
+      },
+      {
+        path: 'github',
+        element: <Github />,
+        loader={()=>}
       }
     ]
   }
