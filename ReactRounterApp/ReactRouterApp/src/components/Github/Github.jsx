@@ -9,13 +9,17 @@ function Github() {
     setData(data)
   })
   }, [])
-  
-  
-  
-  
+ 
   return (
     <div className='text-center m-4 bg-slate-600 p-4 text-3xl text-white'>Github Followers:{data.followers}
-      <img className='' src={data.avatar_url} alt="img" width={300}/>
+      <img  src={data.avatar_url} alt="img" width={300}/>
+      
+      <h1 className='text-center text-2xl text-orange-500'>
+        <ul>
+        {data.name}<br/>
+        {data.id}
+        </ul>
+        </h1>
     </div>
   )
 }
