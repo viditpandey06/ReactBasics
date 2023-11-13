@@ -8,7 +8,7 @@ import Card from './components/Card'
 function App() {
   const [themeMode, setThemeMode] = useState('light')
   const lightTheme = () => {
-    setThemeMode('dark')
+    setThemeMode('light')
   }
   const darkTheme = () => {
     setThemeMode('dark')
