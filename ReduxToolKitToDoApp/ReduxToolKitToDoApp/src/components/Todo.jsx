@@ -1,31 +1,10 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { removeTodo, updateTodo } from '../feautures/todo/todoSlice'
-function Todo() {
-  const todos = useSelector((state) => {
-    state.todos
-  })
+import { removeTodo } from '../feautures/todo/todoSlice'
+
+function Todos() {
+  const todos = useSelector(state => state.todos)
   const dispatch = useDispatch()
-  
-  // return (
-  //   <>
-  //     <div>Todos</div>
-  //     {todos.mao((todo) => {
-  //       <li key={todo.id}>
-  //         {todo.text}
-  //         <button onClick={() => {
-  //           dispatch(removeTodo(todo.id))
-  //         }}>
-
-  //         </button>
-  //       </li>
-
-  //     })
-
-  //     }
-
-  //   </>
-  // )
 
   return (
     <>
@@ -61,8 +40,6 @@ function Todo() {
       </ul>
     </>
   )
-
-
 }
 
-export default Todo
+export default Todos

@@ -3,7 +3,7 @@ const initialState={
     todos:[{
         id:1,
         text:"Hello",
-        completed:false
+       // completed:false
     }]
 }
 export const todoSlice = createSlice({
@@ -19,13 +19,18 @@ export const todoSlice = createSlice({
                 id:nanoid(),
                 text:action.payload.text
             }
+            console.log('addTodo initiated 1');
             state.todos.push(todo)
+            console.log('addTodo initiated 2');
         },
+
         removeTodo:(state,action)=>{
-               state.todos=state.todos.filter((todo)=>todo.id!==action.payload.id)
+               state.todos=state.todos.filter((todo)=>todo.id!=action.payload.id)
+               console.log('removeTodo initiated');
         },
         updateTodo:()=>{
             state.todos=state.todos.map((todo)=>todo.id===action.payload.id ? todo.text=action.payload.text:todo)
+            console.log('updateTodo initiated');
         }
     }
 })
