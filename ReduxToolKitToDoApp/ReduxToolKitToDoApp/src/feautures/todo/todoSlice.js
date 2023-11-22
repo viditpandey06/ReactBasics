@@ -17,21 +17,20 @@ export const todoSlice = createSlice({
         addTodo:(state,action)=>{
             const todo={
                 id:nanoid(),
-                text:action.payload.text,
+                text:action.payload
 
             }
-            console.log(todo.text);
+           
             console.log('addTodo initiated 1');
             state.todos.push(todo)
             console.log('addTodo initiated 2');
         },
 
         removeTodo:(state,action)=>{
-               state.todos=state.todos.filter((todo)=>todo.id!=action.payload.id)
-               console.log('removeTodo initiated');
+               state.todos=state.todos.filter((todo)=>todo.id!=action.payload)
         },
-        updateTodo:()=>{
-            state.todos=state.todos.map((todo)=>todo.id===action.payload.id ? todo.text=action.payload.text:todo)
+        updateTodo:(state,action)=>{
+            state.todos=state.todos.map((todo)=>todo.id===action.payload.id ? todo.text=action.payload:todo)
             console.log('updateTodo initiated');
         }
     }
