@@ -19,6 +19,7 @@ function App() {
     let passw=""
     let str="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
     if(number) str+="0123456789"
+    console.log(str)
     if(character) str+='!@#$%^&*(){}[]:'
     for (let index = 1; index <=length; index++){
       let char=Math.floor(Math.random()*str.length+1)
